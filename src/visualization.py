@@ -6,9 +6,9 @@ from pathlib import Path
 
 def plot_budget_vs_revenue(df):
 
-    output_path = Path("reports/figures/revenue_vs_budget.png")
+    # output_path = Path("reports/figures/revenue_vs_budget.png")
 
-    output_path.parent.mkdir(parents=True, exist_ok=True)
+    # output_path.parent.mkdir(parents=True, exist_ok=True)
 
     plt.figure(figsize=(8, 6))
 
@@ -18,16 +18,19 @@ def plot_budget_vs_revenue(df):
     plt.ylabel("Revenue (Million USD)")
     plt.title("Revenue vs Budget")
 
-    plt.savefig(output_path, bbox_inches="tight")
+    # Save the graph locally in the reports folder.
+    # plt.savefig(output_path, bbox_inches="tight")
+    # Show the graph immediately after saving it.
+    plt.show()
     plt.close()
-    print(f"Saved figure: {output_path}")
+    # print(f"Saved figure: {output_path}")
 
 
 def plot_roi_by_genre(df):
 
-    output_path = Path("reports/figures/roi_by_genre.png")
+    # output_path = Path("reports/figures/roi_by_genre.png")
 
-    output_path.parent.mkdir(parents=True, exist_ok=True)
+    # output_path.parent.mkdir(parents=True, exist_ok=True)
 
     genre_df = df[["genres", "roi"]].copy()
 
@@ -47,16 +50,19 @@ def plot_roi_by_genre(df):
 
     plt.ylabel("ROI")
 
-    plt.savefig(output_path, bbox_inches="tight")
+    # Save the graph locally in the reports folder.
+    # plt.savefig(output_path, bbox_inches="tight")
+    # Show the graph immediately after saving it.
+    plt.show()
     plt.close()
-    print(f"Saved figure: {output_path}")
+    # print(f"Saved figure: {output_path}")
 
 
 def plot_rating_vs_popularity(df):
     
-    output_path = Path("reports/figures/rating_vs_popularity.png")
+    # output_path = Path("reports/figures/rating_vs_popularity.png")
 
-    output_path.parent.mkdir(parents=True, exist_ok=True)
+    # output_path.parent.mkdir(parents=True, exist_ok=True)
 
     plt.figure(figsize=(8, 6))
 
@@ -68,16 +74,19 @@ def plot_rating_vs_popularity(df):
 
     plt.title("Popularity vs Rating")
 
-    plt.savefig(output_path, bbox_inches="tight")
+    # Save the graph locally in the reports folder.
+    # plt.savefig(output_path, bbox_inches="tight")
+    # Show the graph immediately after saving it.
+    plt.show()
     plt.close()
-    print(f"Saved figure: {output_path}")
+    # print(f"Saved figure: {output_path}")
 
 
 def plot_revenue_by_year(df):
 
-    output_path = Path("reports/figures/revenue_by_year.png")
+    # output_path = Path("reports/figures/revenue_by_year.png")
 
-    output_path.parent.mkdir(parents=True, exist_ok=True)
+    # output_path.parent.mkdir(parents=True, exist_ok=True)
 
     yearly_revenue = df.groupby("release_year")["revenue_musd"].sum()
 
@@ -91,16 +100,19 @@ def plot_revenue_by_year(df):
 
     plt.title("Yearly Box Office Revenue")
 
-    plt.savefig(output_path, bbox_inches="tight")
+    # Save the graph locally in the reports folder.
+    # plt.savefig(output_path, bbox_inches="tight")
+    # Show the graph immediately after saving it.
+    plt.show()
     plt.close()
-    print(f"Saved figure: {output_path}")
+    # print(f"Saved figure: {output_path}")
 
 
 def plot_franchise_comparison(franchise_data):
 
-    output_path = Path("reports/figures/franchise_comparison.png")
+    # output_path = Path("reports/figures/franchise_comparison.png")
 
-    output_path.parent.mkdir(parents=True, exist_ok=True)
+    # output_path.parent.mkdir(parents=True, exist_ok=True)
 
     franchise_data[["mean_revenue", "mean_budget"]].plot(kind="bar", figsize=(8, 6))
 
@@ -110,6 +122,9 @@ def plot_franchise_comparison(franchise_data):
 
     plt.xticks([0, 1], ["Standalone", "Franchise"], rotation=0)
 
-    plt.savefig(output_path, bbox_inches="tight")
+    # Save the graph locally in the reports folder.
+    # plt.savefig(output_path, bbox_inches="tight")
+    # Show the graph immediately after saving it.
+    plt.show()
     plt.close()
-    print(f"Saved figure: {output_path}")
+    # print(f"Saved figure: {output_path}")
